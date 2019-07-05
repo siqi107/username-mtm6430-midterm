@@ -1,31 +1,56 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <!-- nav -->
+    <div class="navbar" style="background-color: #e3f2fd;">
+      <div class="container">
+        <a class="navbar-brand" style="color:black; padding-left:0" href="#">My Vue App</a>
+        <nav class="nav">
+          <router-link to="/">Home</router-link>
+          <router-link to="about">About</router-link>
+          <router-link to="contact">Contact</router-link>
+          <router-link to="testimonials">User Testimonials</router-link>
+        </nav>
+      </div>
     </div>
-    <router-view/>
+    <!-- end of nav -->
+    <router-view />
   </div>
 </template>
 
+<script>
+import HelloWorld from "./components/HelloWorld.vue";
+
+export default {
+  name: "app",
+  components: {
+    HelloWorld
+  },
+  computed: {
+    title: function() {
+      return "My Vue App";
+    }
+  }
+};
+</script>
+
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+
+.navbar {
+  font-size: 20px;
+  align-items: center;
+  background-color: hsl(0, 0%, 97%);
+  display: flex;
+  height: 60px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  padding-left: 20px;
 }
 </style>
